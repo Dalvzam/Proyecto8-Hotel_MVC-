@@ -5,16 +5,16 @@ public class GestorReservas {
     Vista vista = new Vista();
     GestorClientes cliente = new GestorClientes();
 
-    private void aniadirReserva(){
+    public void aniadirReserva(){
         Reserva reserva = new Reserva();
         listaReservas.add(reserva);
     }
-    private void listarClientes(){
+    public void listarClientes(){
         for (Reserva reserva : listaReservas) {
             vista.mostrarMensaje(reserva.toString());
         }
     }
-    private void buscarReservasClienteOHabitacion(){
+    public void buscarReservasClienteOHabitacion(){
         int respuesta = vista.leerEntero("Introduce 1 si quieres buscar por Clientes, 2 si es por Habitacion");
         switch(respuesta){
             case 1 -> busquedaPorCliente(vista.leerTexto("Introduce el nombre del cliente buscado: "));
@@ -23,7 +23,7 @@ public class GestorReservas {
         }
 
     }
-    private void busquedaPorCliente(String nombreClienteBuscado){
+    public void busquedaPorCliente(String nombreClienteBuscado){
         for (Cliente clientePuntero : cliente.listaClientes) {
             if (clientePuntero.getNombre().equals(nombreClienteBuscado)){
                 for (Reserva reserva : listaReservas) {
@@ -39,7 +39,7 @@ public class GestorReservas {
             
         }
     }
-    private void busquedaPorHabitacion(){
+    public void busquedaPorHabitacion(){
         
     }
 }
