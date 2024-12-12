@@ -2,6 +2,7 @@ public class Cliente {
     private int id;
     private String nombre;
     private String dni;
+    
     public int getId() {
         return id;
     }

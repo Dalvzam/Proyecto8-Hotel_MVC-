@@ -2,6 +2,7 @@ import java.sql.Date;
 
 public class Reserva {
     private int idReserva;
+    private int IdHabitacion;
     private Habitacion habitacion;
     private Cliente cliente;
     private Date fechaEntrada;
@@ -13,6 +14,12 @@ public class Reserva {
     }
     public void setIdReserva(int idReserva) {
         this.idReserva = idReserva;
+    }
+    public int getIdHabitacion() {
+        return IdHabitacion;
+    }
+    public void setIdHabitacion(int idHabitacion) {
+        IdHabitacion = idHabitacion;
     }
     public Habitacion getHabitacion() {
         return habitacion;
@@ -49,4 +56,5 @@ public class Reserva {
         return "Reserva [idReserva=" + idReserva + ", habitacion=" + habitacion + ", cliente=" + cliente
                 + ", fechaEntrada=" + fechaEntrada + ", fechaSalida=" + fechaSalida + ", total=" + total + "]";
     }
+    
 }

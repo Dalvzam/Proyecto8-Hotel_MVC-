@@ -19,4 +19,10 @@ public class GestorClientes {
             }
         }
     }
+    public void eliminarClientePorID(int idCliente) {
+		
+		for(Cliente c : listaClientes) {
+			if(c.getId() == idCliente) listaClientes.remove(c);
+		}
+	}
 }
