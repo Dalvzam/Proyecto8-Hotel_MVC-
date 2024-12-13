@@ -1,9 +1,11 @@
+package Main;
 import java.util.Scanner;
+import Main.Controlador;
+
 
 public class Vista {
-
-    private Scanner scanner = new Scanner(System.in);
-    Controlador controlador = new Controlador(new GestorClientes(), new GestorHabitaciones(), new GestorReservas());
+    Scanner scanner = new Scanner(System.in);
+    //Controlador controlador = new Controlador();
 
     public void mostrarMensaje(String string){
         System.out.println(string);
@@ -19,8 +21,8 @@ public class Vista {
         return scanner.nextInt();
     }
     
-    public void menu(){
-        Scanner scanner = new Scanner(System.in);
+    public void main(String[] args) {
+        Controlador controlador = new Controlador();
         int option;
 
         do {
@@ -43,7 +45,13 @@ public class Vista {
             switch (option) {
                 case 1 -> {
                     // Añadir habitación
-                    controlador.aniadirHabitacion();
+                    System.out.println("Introduce ID_: ");
+                    int id = scanner.nextInt();
+                    System.out.println("Introduce Tipo_: ");
+                    String tipo = scanner.next();
+                    System.out.println("Introduce Precio Por Noche_: ");
+                    float precioPorNoche = scanner.nextFloat();
+                    controlador.aniadirHabitacion(id,tipo,precioPorNoche);
                 }
                 case 2 -> {
                     // Listar habitaciones
@@ -52,7 +60,7 @@ public class Vista {
                 case 3 -> {
                     // Eliminar habitación
                     System.out.println("Introduce el nombre del cliente_: ");
-                    String nombreClienteBuscado = scanner.nextLine();
+                    String nombreClienteBuscado = scanner.next();
                     controlador.eliminarHabitacionPorCliente(nombreClienteBuscado);
                 }
                 case 4 -> {
@@ -71,7 +79,13 @@ public class Vista {
                 }
                 case 7 -> {
                     // Crear reserva
-                    controlador.aniadirReserva();
+                    System.out.println("Introduce ID de la reserva_: ");
+                    int idReserva = scanner.nextInt();
+                    System.out.println("Introduce ID de la habitacion: ");
+                    int IdHabitacion = scanner.nextInt();
+                    System.out.println("Introduce ID del total: ");
+                    int total = scanner.nextInt();
+                    controlador.aniadirReserva(idReserva,IdHabitacion,total);
                 }
                 case 8 -> {
                     // Listar reservas

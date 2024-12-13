@@ -1,12 +1,17 @@
+package Main;
+
 import java.util.ArrayList;
 
 public class GestorReservas {
+    public GestorReservas(){
+
+    }
     ArrayList<Reserva> listaReservas = new ArrayList<>();
     Vista vista = new Vista();
     GestorClientes cliente = new GestorClientes();
 
-    public void aniadirReserva() {
-        Reserva reserva = new Reserva();
+    public void aniadirReserva(int idReserva,int IdHabitacion, int total) {
+        Reserva reserva = new Reserva(idReserva,IdHabitacion, total);
         listaReservas.add(reserva);
     }
 

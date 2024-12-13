@@ -1,6 +1,11 @@
+package Main;
 import java.util.ArrayList;
 
 public class GestorClientes {
+
+    public GestorClientes(){
+
+    }
     ArrayList<Cliente> listaClientes = new ArrayList<>();
     Vista vista = new Vista();
     public void aniadirCliente(){

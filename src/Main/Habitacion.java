@@ -1,8 +1,14 @@
+package Main;
 public class Habitacion {
     private int id;
     private String tipo;
     private float precioPorNoche;
     
+    public Habitacion(int id, String tipo, float precioPorNoche){
+        this.id = id;
+        this.tipo = tipo;
+        this.precioPorNoche = precioPorNoche;
+    }
     public int getId() {
         return id;
     }

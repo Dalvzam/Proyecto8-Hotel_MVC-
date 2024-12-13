@@ -1,7 +1,19 @@
+package Main;
+
+import java.sql.Date;
+
+import Main.GestorClientes;
+import Main.GestorHabitaciones;
+import Main.GestorReservas;
+
 public class Controlador {
     GestorClientes gestorClientes = new GestorClientes();
     GestorHabitaciones gestorHabitaciones = new GestorHabitaciones();
     GestorReservas gestorReservas = new GestorReservas();
+
+    public Controlador() {
+
+    }
 
     public Controlador(GestorClientes gestorClientes, GestorHabitaciones gestorHabitaciones,
             GestorReservas gestorReservas) {
@@ -10,44 +22,43 @@ public class Controlador {
         this.gestorReservas = gestorReservas;
     }
 
-    public void aniadirHabitacion(){
-        gestorHabitaciones.aniadirHabitacion();
+    public void aniadirHabitacion(int id, String tipo, float precioPorNoche) {
+        gestorHabitaciones.aniadirHabitacion(id, tipo, precioPorNoche);
     }
 
-    public void listarHabitaciones(){
+    public void listarHabitaciones() {
         gestorHabitaciones.listarHabitaciones();
     }
 
-    
     public void eliminarHabitacionPorCliente(String nombreCliente) {
         gestorReservas.busquedaPorCliente(nombreCliente);
-	}
-    
-    public void registrarCliente(){
+    }
+
+    public void registrarCliente() {
         gestorClientes.aniadirCliente();
     }
-    
-    public void listarClientes(){
+
+    public void listarClientes() {
         gestorClientes.listarClientes();
     }
 
-    public void eliminarCliente(int idBuscado){
+    public void eliminarCliente(int idBuscado) {
         gestorClientes.eliminarClientePorID(idBuscado);
     }
 
-    public void aniadirReserva(){
-        gestorReservas.aniadirReserva();
+    public void aniadirReserva(int idReserva,int IdHabitacion,int total) {
+        gestorReservas.aniadirReserva(idReserva,IdHabitacion,total);
     }
 
-    public void listarReserva(){
+    public void listarReserva() {
         gestorReservas.listarReserva();
     }
 
-    public void borrarReserva(int idReservaBuscada){
+    public void borrarReserva(int idReservaBuscada) {
         gestorReservas.borrarReserva(idReservaBuscada);
     }
 
-    public void buscarReservasClienteOHabitacion(){
+    public void buscarReservasClienteOHabitacion() {
         gestorReservas.buscarReservasClienteOHabitacion();
     }
 }

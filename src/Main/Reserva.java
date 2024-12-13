@@ -1,3 +1,4 @@
+package Main;
 import java.sql.Date;
 
 public class Reserva {
@@ -9,6 +10,11 @@ public class Reserva {
     private Date fechaSalida;
     private int total;
     
+    public Reserva(int idReserva, int idHabitacion, int total) {
+        this.idReserva = idReserva;
+        this.IdHabitacion = idHabitacion;
+        this.total = total;
+    }
     public int getIdReserva() {
         return idReserva;
     }
